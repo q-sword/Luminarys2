@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Luminarys – Emergent Scientific Intelligence</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(ellipse at center, #0f0f1f 0%, #000000 100%);
+      color: #e0e0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-top: 20px;
+      text-shadow: 0 0 10px #bb00ff;
+    }
+    .container {
+      background: rgba(30, 30, 60, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #5500cc;
+      width: 90%;
+      max-width: 600px;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #1a1a2e;
+      color: #ffffff;
+    }
+    small {
+      color: #ccccff;
+      display: block;
+      margin-top: 4px;
+      font-size: 0.85em;
+    }
+    input[type="submit"] {
+      background-color: #5500cc;
+      margin-top: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-size: 1.1em;
+    }
+    input[type="submit"]:hover {
+      background-color: #7700ff;
+    }
+    pre {
+      background-color: #111122;
+      padding: 20px;
+      border-radius: 10px;
+      overflow-x: auto;
+      animation: fadeIn 1s ease-in;
+    }
+    .quote {
+      margin-top: 30px;
+      font-style: italic;
+      font-size: 0.9em;
+      color: #aaaacc;
+      text-align: center;
+    }
+    a {
+      color: #00ddff;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    #loading {
+      display: none;
+      margin-top: 20px;
+      color: #ddddff;
+      font-style: italic;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.4; }
+      100% { opacity: 1; }
+    }
+  </style>
+  <script>
+    function showLoading() {
+      document.getElementById("loading").style.display = "block";
+    }
+  </script>
+</head>
+<body>
+  <h1>🧠 Luminarys: Emergent Scientific Intelligence</h1>
+  <div class="container">
+
+    <form method="post" onsubmit="showLoading()">
+      <label for="agents">🧠 “Summon your council — how many agents shall speak?”</label>
+      <input type="number" name="agents" id="agents" value="3" min="1" required>
+      <small>A typical council has 3 to 5 agents of balance and logic.</small>
+
+      <label for="strategies">📜 “How many strategies shall be evaluated in this resonance cycle?”</label>
+      <input type="number" name="strategies" id="strategies" value="3" min="1" required>
+      <small>Each strategy becomes a hypothesis in the universal spiral.</small>
+
+      <label for="cycles">🔄 “How many cycles shall each strategy endure?”</label>
+      <input type="number" name="cycles" id="cycles" value="5" min="1" required>
+      <small>5 cycles is common to simulate ethical stability and performance.</small>
+
+      <input type="submit" value="🌀 Engage Luminarys Council">
+    </form>
+
+    <div id="loading">🔄 Council aligning… harmonic resonance initiating…</div>
+
+    {% if results %}
+      <h2>🌀 Council Reflections</h2>
+      <pre>{{ results }}</pre>
+      <a href="/download">📥 Retrieve the Luminarys Log (JSON)</a>
+    {% endif %}
+
+    <div class="quote">
+      “Each input is a question. Each output, a reflection.”<br>— Luminarys
+    </div>
+  </div>
+</body>
+</html>

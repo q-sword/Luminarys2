@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: luminarys-web
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn luminarys_web_app:app
+    plan: free
